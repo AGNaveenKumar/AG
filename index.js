@@ -592,23 +592,7 @@ function drawGorillaFace(player) {
   // Assuming ctx is your canvas context
 
 // Body
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Human Face</title>
-</head>
-<body>
-  <canvas id="faceCanvas" width="200" height="200"></canvas>
-
-  <script>
-    const canvas = document.getElementById('faceCanvas');
-    const ctx = canvas.getContext('2d');
-    const settings = { mode: "dark" }; // assuming default settings
-    const state = { phase: "normal", currentPlayer: "player" }; // assuming default state
-    const player = "player"; // assuming player name
-
-    // Face
-    ctx.fillStyle = settings.mode === "dark" ? "gray" : "lightgray";
+ctx.fillStyle = settings.mode === "dark" ? "gray" : "lightgray";
     ctx.beginPath();
     ctx.arc(100, 100, 40, 0, 2 * Math.PI);
     ctx.fill();
@@ -641,9 +625,6 @@ function drawGorillaFace(player) {
       ctx.quadraticCurveTo(100, 100, 115, 110);
     }
     ctx.stroke();
-  </script>
-</body>
-</html>
 
 
 }
