@@ -592,7 +592,7 @@ function drawGorillaFace(player) {
   // Assuming ctx is your canvas context
 
 
-  -------------------------
+  //-------------------------
     
 // // Body
 // ctx.fillStyle = settings.mode === "dark" ? "gray" : "lightgray";
@@ -629,7 +629,7 @@ function drawGorillaFace(player) {
 //     }
 //     ctx.stroke();
 
---------------------
+//--------------------
     // Face
 ctx.fillStyle = "peachpuff"; // Human skin tone
 ctx.beginPath();
