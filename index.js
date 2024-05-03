@@ -591,42 +591,80 @@ function drawGorillaFace(player) {
   // ctx.stroke();
   // Assuming ctx is your canvas context
 
-// Body
-ctx.fillStyle = settings.mode === "dark" ? "gray" : "lightgray";
-    ctx.beginPath();
-    ctx.arc(100, 100, 40, 0, 2 * Math.PI);
-    ctx.fill();
 
-    // Eyes
-    ctx.fillStyle = "black";
-    ctx.beginPath();
-    ctx.arc(85, 90, 5, 0, 2 * Math.PI);
-    ctx.moveTo(115, 90);
-    ctx.arc(115, 90, 5, 0, 2 * Math.PI);
-    ctx.fill();
+  -------------------------
+    
+// // Body
+// ctx.fillStyle = settings.mode === "dark" ? "gray" : "lightgray";
+//     ctx.beginPath();
+//     ctx.arc(100, 100, 40, 0, 2 * Math.PI);
+//     ctx.fill();
 
-    ctx.strokeStyle = "black";
-    ctx.lineWidth = 1;
+//     // Eyes
+//     ctx.fillStyle = "black";
+//     ctx.beginPath();
+//     ctx.arc(85, 90, 5, 0, 2 * Math.PI);
+//     ctx.moveTo(115, 90);
+//     ctx.arc(115, 90, 5, 0, 2 * Math.PI);
+//     ctx.fill();
 
-    // Nose
-    ctx.beginPath();
-    ctx.moveTo(100, 90);
-    ctx.lineTo(95, 100);
-    ctx.lineTo(105, 100);
-    ctx.stroke();
+//     ctx.strokeStyle = "black";
+//     ctx.lineWidth = 1;
 
-    // Mouth
-    ctx.beginPath();
-    if (state.phase === "celebrating" && state.currentPlayer === player) {
-      ctx.moveTo(85, 110);
-      ctx.quadraticCurveTo(100, 120, 115, 110);
-    } else {
-      ctx.moveTo(85, 110);
-      ctx.quadraticCurveTo(100, 100, 115, 110);
-    }
-    ctx.stroke();
+//     // Nose
+//     ctx.beginPath();
+//     ctx.moveTo(100, 90);
+//     ctx.lineTo(95, 100);
+//     ctx.lineTo(105, 100);
+//     ctx.stroke();
 
+//     // Mouth
+//     ctx.beginPath();
+//     if (state.phase === "celebrating" && state.currentPlayer === player) {
+//       ctx.moveTo(85, 110);
+//       ctx.quadraticCurveTo(100, 120, 115, 110);
+//     } else {
+//       ctx.moveTo(85, 110);
+//       ctx.quadraticCurveTo(100, 100, 115, 110);
+//     }
+//     ctx.stroke();
 
+--------------------
+    // Face
+ctx.fillStyle = "peachpuff"; // Human skin tone
+ctx.beginPath();
+ctx.arc(100, 100, 40, 0, 2 * Math.PI);
+ctx.fill();
+
+// Eyes
+ctx.fillStyle = "black";
+ctx.beginPath();
+ctx.arc(85, 90, 5, 0, 2 * Math.PI);
+ctx.moveTo(115, 90);
+ctx.arc(115, 90, 5, 0, 2 * Math.PI);
+ctx.fill();
+
+// Nose
+ctx.strokeStyle = "black";
+ctx.lineWidth = 1.4;
+ctx.beginPath();
+ctx.moveTo(100, 95);
+ctx.lineTo(95, 105);
+ctx.lineTo(100, 105);
+ctx.stroke();
+
+// Mouth
+ctx.beginPath();
+if (state.phase === "celebrating" && state.currentPlayer === player) {
+  ctx.moveTo(85, 115);
+  ctx.quadraticCurveTo(100, 120, 115, 115);
+} else {
+  ctx.moveTo(85, 115);
+  ctx.quadraticCurveTo(100, 125, 115, 115);
+}
+ctx.stroke();
+
+  
 }
 
 function drawGorillaThoughtBubbles(player) {
