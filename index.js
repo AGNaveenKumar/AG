@@ -592,39 +592,59 @@ function drawGorillaFace(player) {
   // Assuming ctx is your canvas context
 
 // Body
-ctx.fillStyle = settings.mode === "dark" ? "gray" : "lightgray";
-ctx.beginPath();
-ctx.arc(0, 63, 20, 0, 2 * Math.PI);
-ctx.fill();
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Human Face</title>
+</head>
+<body>
+  <canvas id="faceCanvas" width="200" height="200"></canvas>
 
-// Eyes
-ctx.fillStyle = "black";
-ctx.beginPath();
-ctx.arc(-5, 60, 3, 0, 2 * Math.PI);
-ctx.moveTo(5, 60);
-ctx.arc(5, 60, 3, 0, 2 * Math.PI);
-ctx.fill();
+  <script>
+    const canvas = document.getElementById('faceCanvas');
+    const ctx = canvas.getContext('2d');
+    const settings = { mode: "dark" }; // assuming default settings
+    const state = { phase: "normal", currentPlayer: "player" }; // assuming default state
+    const player = "player"; // assuming player name
 
-ctx.strokeStyle = "black";
-ctx.lineWidth = 1.4;
+    // Face
+    ctx.fillStyle = settings.mode === "dark" ? "gray" : "lightgray";
+    ctx.beginPath();
+    ctx.arc(100, 100, 40, 0, 2 * Math.PI);
+    ctx.fill();
 
-// Nose
-ctx.beginPath();
-ctx.moveTo(-2, 55);
-ctx.lineTo(0, 53);
-ctx.lineTo(2, 55);
-ctx.stroke();
+    // Eyes
+    ctx.fillStyle = "black";
+    ctx.beginPath();
+    ctx.arc(85, 90, 5, 0, 2 * Math.PI);
+    ctx.moveTo(115, 90);
+    ctx.arc(115, 90, 5, 0, 2 * Math.PI);
+    ctx.fill();
 
-// Mouth
-ctx.beginPath();
-if (state.phase === "celebrating" && state.currentPlayer === player) {
-  ctx.moveTo(-7, 50);
-  ctx.quadraticCurveTo(0, 45, 7, 50);
-} else {
-  ctx.moveTo(-7, 50);
-  ctx.quadraticCurveTo(0, 55, 7, 50);
-}
-ctx.stroke();
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 1;
+
+    // Nose
+    ctx.beginPath();
+    ctx.moveTo(100, 90);
+    ctx.lineTo(95, 100);
+    ctx.lineTo(105, 100);
+    ctx.stroke();
+
+    // Mouth
+    ctx.beginPath();
+    if (state.phase === "celebrating" && state.currentPlayer === player) {
+      ctx.moveTo(85, 110);
+      ctx.quadraticCurveTo(100, 120, 115, 110);
+    } else {
+      ctx.moveTo(85, 110);
+      ctx.quadraticCurveTo(100, 100, 115, 110);
+    }
+    ctx.stroke();
+  </script>
+</body>
+</html>
+
 
 }
 
